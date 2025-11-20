@@ -9,6 +9,22 @@
       "PackagePath": "staticwebassets\\favicon.svg"
     },
     {
+      "Id": "C:\\codigo\\frontendnet\\wwwroot\\images\\carrusel1.webp",
+      "PackagePath": "staticwebassets\\images\\carrusel1.webp"
+    },
+    {
+      "Id": "C:\\codigo\\frontendnet\\wwwroot\\images\\carrusel2.webp",
+      "PackagePath": "staticwebassets\\images\\carrusel2.webp"
+    },
+    {
+      "Id": "C:\\codigo\\frontendnet\\wwwroot\\images\\carrusel3.webp",
+      "PackagePath": "staticwebassets\\images\\carrusel3.webp"
+    },
+    {
+      "Id": "C:\\codigo\\frontendnet\\wwwroot\\images\\carrusel4.webp",
+      "PackagePath": "staticwebassets\\images\\carrusel4.webp"
+    },
+    {
       "Id": "C:\\codigo\\frontendnet\\wwwroot\\images\\logo-dark.png",
       "PackagePath": "staticwebassets\\images\\logo-dark.png"
     },
@@ -23,6 +39,10 @@
     {
       "Id": "C:\\codigo\\frontendnet\\wwwroot\\js\\cambio_tema.js",
       "PackagePath": "staticwebassets\\js\\cambio_tema.js"
+    },
+    {
+      "Id": "C:\\codigo\\frontendnet\\wwwroot\\js\\portada.js",
+      "PackagePath": "staticwebassets\\js\\portada.js"
     },
     {
       "Id": "C:\\codigo\\frontendnet\\wwwroot\\js\\producto_portada.js",

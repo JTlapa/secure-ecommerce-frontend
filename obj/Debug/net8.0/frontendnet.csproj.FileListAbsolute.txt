@@ -26,3 +26,4 @@ C:\codigo\frontendnet\obj\Debug\net8.0\ref\frontendnet.dll
 C:\codigo\frontendnet\obj\Debug\net8.0\frontendnet.RazorAssemblyInfo.cache
 C:\codigo\frontendnet\obj\Debug\net8.0\frontendnet.RazorAssemblyInfo.cs
 C:\codigo\frontendnet\bin\Debug\net8.0\frontendnet.staticwebassets.runtime.json
+C:\codigo\frontendnet\obj\Debug\net8.0\frontendnet.sourcelink.json
