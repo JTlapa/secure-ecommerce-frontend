@@ -1,0 +1,49 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\codigo\\frontendnet\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\codigo\\frontendnet\\wwwroot\\favicon.svg",
+      "PackagePath": "staticwebassets\\favicon.svg"
+    },
+    {
+      "Id": "C:\\codigo\\frontendnet\\wwwroot\\images\\logo-dark.png",
+      "PackagePath": "staticwebassets\\images\\logo-dark.png"
+    },
+    {
+      "Id": "C:\\codigo\\frontendnet\\wwwroot\\images\\logo.png",
+      "PackagePath": "staticwebassets\\images\\logo.png"
+    },
+    {
+      "Id": "C:\\codigo\\frontendnet\\wwwroot\\images\\netlogo.jpg",
+      "PackagePath": "staticwebassets\\images\\netlogo.jpg"
+    },
+    {
+      "Id": "C:\\codigo\\frontendnet\\wwwroot\\js\\cambio_tema.js",
+      "PackagePath": "staticwebassets\\js\\cambio_tema.js"
+    },
+    {
+      "Id": "C:\\codigo\\frontendnet\\wwwroot\\js\\producto_portada.js",
+      "PackagePath": "staticwebassets\\js\\producto_portada.js"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.frontendnet.props",
+      "PackagePath": "build\\frontendnet.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.frontendnet.props",
+      "PackagePath": "buildMultiTargeting\\frontendnet.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.frontendnet.props",
+      "PackagePath": "buildTransitive\\frontendnet.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.frontendnet.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
