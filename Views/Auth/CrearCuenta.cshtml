@@ -1,0 +1,47 @@
+@model UsuarioPwd
+@{
+    ViewData["Title"] = "Crear cuenta";
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+<div class="card mx-auto mt-5" style="max-width: 500px;">
+    <div class="card-body">
+        <h1 class="h3 text-center">Únete a Mercado Libre</h1>
+        <h5 class="card-title text-center mt-4 mb-4">@ViewData["Title"]</h5>
+
+        <form asp-action="CrearCuenta">
+            <input type="hidden" asp-for="Rol" value="Usuario" />
+
+            <div class="form-floating mb-3">
+                <input asp-for="Nombre" class="form-control" placeholder="Nombre completo" />
+                <label asp-for="Nombre" class="form-label"></label>
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input asp-for="Email" class="form-control" placeholder="nombre@ejemplo.com" />
+                <label asp-for="Email" class="form-label"></label>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input asp-for="Password" class="form-control" placeholder="Contraseña" />
+                <label asp-for="Password" class="form-label"></label>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger text-center mb-3 alert alert-danger small"></div>
+
+            <div class="text-center mt-4">
+                <button id="btnEnviar" type="submit" class="btn btn-primary w-100">Crear cuenta</button>
+            </div>
+            
+            <div class="text-center mt-3">
+                <a class="text-decoration-none small" asp-action="Index">¿Ya tienes cuenta? Inicia sesión</a>
+            </div>
+        </form>
+    </div>
+</div>

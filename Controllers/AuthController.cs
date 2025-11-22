@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace frontendnet.Controllers;
 
-public class AuthController(AuthClientService auth) : Controller
+public class AuthController(AuthClientService auth, UsuariosClientService usuarios) : Controller
 {
     [AllowAnonymous]
     public IActionResult Index()
@@ -59,5 +59,37 @@ public class AuthController(AuthClientService auth) : Controller
         await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
         // Sino, se redirige a la página inicial
         return RedirectToAction("Index", "Auth");
+    }
+
+    [AllowAnonymous]
+    public ActionResult CrearCuenta()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    [AllowAnonymous]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> CrearCuentaAsync(UsuarioPwd itemToCreate)
+    {
+        itemToCreate.Rol = "Usuario";
+        ModelState.Remove("Rol");
+        if (ModelState.IsValid)
+        {
+            try
+            {
+                await usuarios.PostAsync(itemToCreate);
+                return RedirectToAction(nameof(Index));
+            }
+            catch (HttpRequestException ex)
+            {
+                if (ex.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+                {
+                    return RedirectToAction("Salir", "Auth");
+                }
+            }
+        }
+        ModelState.AddModelError("Password", "No ha sido posible crear la cuenta. Inténtelo nuevamente.");
+        return View(itemToCreate);
     }
 }
