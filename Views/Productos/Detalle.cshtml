@@ -2,6 +2,23 @@
 @{
     ViewData["Title"] = "Productos";
     ViewData["SubTitle"] = "Detalle";
+
+    
+    bool soloUsuario = ViewBag.SoloUsuario ?? false;
+    bool soloAdmin = ViewBag.SoloAdmin ?? false;
+}
+@if (TempData["SuccessMessage"] != null)
+{
+    <div id="alert-success" class="alert alert-success mt-3" role="alert">
+        @TempData["SuccessMessage"]
+    </div>
+
+    <script>
+        setTimeout(() => {
+            const alertBox = document.getElementById("alert-success");
+            if (alertBox) alertBox.style.display = "none";
+        }, 2000);
+    </script>
 }
 
 <nav aria-label="breadcrumb">
@@ -16,6 +33,21 @@
 
 <partial name="_CardPartial" model="Model" />
 
-<div class="text-center mt-3">
-    <a class="btn btn-sm btn-outline-secondary" asp-action="Index" title="Cancelar">Cancelar</a>
-</div>
+
+@if (soloUsuario)
+{
+    <form asp-controller="Carrito" asp-action="Agregar" method="post" class="text-center mt-3">
+        <input type="hidden" name="IdProducto" value="@Model.ProductoId" />
+        <div class="mb-5 d-flex justify-content-center align-items-center gap-2">
+            <label for="cantidad" class="form-label mb-0">Cantidad:</label>
+            <input type="number" id="cantidad" name="Cantidad" class="form-control form-control-sm w-auto" value="1" min="1" required />
+        </div>
+        <button type="submit" class="btn btn-sm btn-primary me-2">Agregar al carrito</button>
+        <a class="btn btn-sm btn-outline-secondary" asp-controller="Comprar" asp-action="Index">Cancelar</a>
+    </form>
+}
+@if (soloAdmin){
+    <div class="text-center mt-3">
+        <a class="btn btn-sm btn-outline-secondary" asp-action="Index" title="Cancelar">Cancelar</a>
+    </div>
+}
