@@ -134,4 +134,27 @@ public class CarritoController : Controller
         TempData["SuccessMessage"] = "¡Compra realizada exitosamente!";
         return RedirectToAction("Index", "Comprar");
     }
+
+    [HttpPost]
+    public async Task<IActionResult> ModificarCantidad(string IdCarrito, int IdProducto, int Cantidad) 
+    {
+        var email = GetUserEmail();
+        if (string.IsNullOrEmpty(email) || Cantidad <= 0)
+            return RedirectToAction("Salir", "Auth");
+
+        try
+        {
+            await carrito.ModificarCantidadAsync(IdCarrito, IdProducto, Cantidad);
+            TempData["SuccessMessage"] = "Cantidad del producto actualizada correctamente.";
+        }
+        catch (HttpRequestException ex)
+        {
+            if (ex.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+                return RedirectToAction("Salir", "Auth");
+
+            TempData["ErrorMessage"] = "No se pudo actualizar la cantidad.";
+        }
+
+        return RedirectToAction(nameof(Index));
+    }
 }

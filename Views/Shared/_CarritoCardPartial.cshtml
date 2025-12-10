@@ -18,10 +18,10 @@
             <form method="post" asp-controller="Carrito" asp-action="ModificarCantidad" class="d-inline">
                 <input type="hidden" name="IdCarrito" value="@Model.IdCarrito" />
                 <input type="hidden" name="IdProducto" value="@Model.IdProducto" />
-                <!--
+                
                 <input type="number" name="Cantidad" min="1" value="@Model.Cantidad"
                        class="form-control form-control-sm w-auto d-inline" />
-                <button type="submit" class="btn btn-sm btn-primary mt-2">Actualizar</button>-->
+                <button type="submit" class="btn btn-sm btn-primary mt-2">Actualizar</button>
             </form>
 
             <form method="post" asp-controller="Carrito" asp-action="EliminarProducto" class="d-inline ms-2">

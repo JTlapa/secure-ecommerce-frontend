@@ -65,4 +65,19 @@ public class CarritoService
         if (!response.IsSuccessStatusCode)
             throw new HttpRequestException("Error al comprar", null, response.StatusCode);
     }
+
+    // PUT /carrito/{idcarrito}/productos/{idproducto}
+    public async Task ModificarCantidadAsync(string idCarrito, int idProducto, int cantidad)
+    {
+        var body = new { cantidad = cantidad };
+
+        var response = await http.PutAsJsonAsync(
+            $"{baseUrl}/{idCarrito}/productos/{idProducto}", 
+            body
+        );
+
+        if (!response.IsSuccessStatusCode)
+            throw new HttpRequestException("Error al modificar cantidad", null, response.StatusCode);
+    }
+
 }
